@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    padding: 20px;
+    background: #ffffff;
+}
+
+a {
+    color: black;
+}
+
+h2 {
+    display: inline;
+}
+
+h3 {
+    display: inline;
+}
+
+.header {
+    padding: 30px;
+    font-size: 19px;
+    text-align: center;
+    background: white;
+}
+
+.center {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;    	
+    width: 720px;
+    padding: 30px;
+}
+
+.centerme {   
+    text-align: center;
+}
+
+.card {
+	background-color: #eee;
+	padding: 20px;
+	margin-top: 0px;
+}
+
+#cardwrapper {
+	display:flex;
+}
+
+#cardfirst {
+     width: 200px;
+}
+
+#cardsecond {
+	width: 400px;
+	height: 200px;
+	margin-left: 20px;
+	position: relative;
+}
+
+#platformwrapper {
+	display: flex;
+	width: 400px;
+	position: absolute;
+	bottom: 0px;
+}
+
+#platformfirst {
+	float: left;
+	width: 200px;
+	height: 49px;
+}
+
+#platformsecond {
+	float: right;
+	width: 200px;
+	text-align: right;
+}
+
+.footer {
+    padding: 20px;
+    width: 700px;
+    text-align: center;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-form
+{
+	margin-left: 0px;
+}
+
+.contact-form label
+{
+	sdisplay: block;
+	margin: 15px 0 6px 0;
+}
+
+.contact-form input
+{
+font-family: Courier, Verdana, Arial, serif;
+}
+
+.contact-form input.input
+{
+	height: 25px;
+	color: #fff;
+	background: #ffffff;
+}
+
+.contact-form input.input,
+.contact-form textarea
+{
+	width: 620px;
+	border-radius: 8px;
+	border: none;
+	padding: 0 5px;
+	color: #666;
+	background: #ffffff;
+}
+
+.contact-form textarea
+{
+	padding: 3px 5px;
+	resize: none;
+	color: #666;
+	background: #ffffff;
+}
+
+.contact-form .submit
+{
+	border: none;
+	box-shadow: none;
+	color: #666;
+	background: #ffffff;
+	border-radius: 4px;
+	float: left;
+	margin-right: 0px;
+	padding: 3px 15px;
+	cursor: pointer;
+}
+
+.antispam 
+{ 
+	display:none;
+}
