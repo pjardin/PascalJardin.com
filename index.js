@@ -1,112 +1,62 @@
-var Typer={
-	text: null,
-	accessCountimer:null,
-	index:0, 
-	speed:2,
-	file:"", 
-	accessCount:0,
-	deniedCount:0, 
-	init: function(){
-		accessCountimer=setInterval(function(){Typer.updLstChr();},500); 
-		$.get(Typer.file,function(data){
-			Typer.text=data;
-			Typer.text = Typer.text.slice(0, Typer.text.length-1);
-		});
-	},
- 
-	content:function(){
-		return $("#console").html();
-	},
- 
-	write:function(str){
-		$("#console").append(str);
-		return false;
-	},
- 
-	addText:function(key){
-		
-		if(key.keyCode==18){
-			Typer.accessCount++; 
-			
-			if(Typer.accessCount>=3){
-				Typer.makeAccess(); 
-			}
-		}
-		
-    		else if(key.keyCode==20){
-			Typer.deniedCount++; 
-			
-			if(Typer.deniedCount>=3){
-				Typer.makeDenied(); 
-			}
-		}
-		
-    		else if(key.keyCode==27){ 
-			Typer.hidepop(); 
-		}
-		
-    		else if(Typer.text){ 
-			var cont=Typer.content(); 
-			if(cont.substring(cont.length-1,cont.length)=="|") 
-				$("#console").html($("#console").html().substring(0,cont.length-1)); 
-			if(key.keyCode!=8){ 
-				Typer.index+=Typer.speed;	
-			}
-      		else {
-			if(Typer.index>0) 
-				Typer.index-=Typer.speed;
-			}
-			var text=Typer.text.substring(0,Typer.index)
-			var rtn= new RegExp("\n", "g"); 
-	
-			$("#console").html(text.replace(rtn,"<br/>"));
-			window.scrollBy(0,50); 
-		}
-		
-		if (key.preventDefault && key.keyCode != 122) { 
-			key.preventDefault()
-		};  
-		
-		if(key.keyCode != 122){ // otherway prevent keys default behavior
-			key.returnValue = false;
-		}
-	},
- 
-	updLstChr:function(){ 
-		var cont=this.content(); 
-		
-		if(cont.substring(cont.length-1,cont.length)=="|") 
-			$("#console").html($("#console").html().substring(0,cont.length-1)); 
-		
-		else
-			this.write("|"); // else write it
-	}
-}
- 
-function replaceUrls(text) {
-	var http = text.indexOf("http://");
-	var space = text.indexOf(".me ", http);
-	
-	if (space != -1) { 
-		var url = text.slice(http, space-1);
-		return text.replace(url, "<a href=\""  + url + "\">" + url + "</a>");
-	} 
-	
-	else {
-		return text
-	}
+function Pascal_Jardin_onclick(){
+    var myElement = document.getElementById('Pascal_Jardin');
+    var topPos = myElement.offsetTop;
+    document.getElementById('console').scrollTop = topPos;
 }
 
-Typer.speed=3;
-Typer.file="CodeNerve.txt";
-Typer.init();
- 
-var timer = setInterval("t();", 30);
-function t() {
-	Typer.addText({"keyCode": 123748});
-	
-	if (Typer.index > Typer.text.length) {
-		clearInterval(timer);
-	}
+function Education_onclick(){
+    var myElement = document.getElementById('Education');
+    var topPos = myElement.offsetTop;
+    document.getElementById('console').scrollTop = topPos;}
+
+function About_Me_onclick(){
+    var myElement = document.getElementById('About_Me');
+    var topPos = myElement.offsetTop;
+    document.getElementById('console').scrollTop = topPos;}
+
+function Links_onclick(){
+    var myElement = document.getElementById('Links');
+    var topPos = myElement.offsetTop;
+    document.getElementById('console').scrollTop = topPos;}
+
+function Work_Experience_onclick(){
+    var myElement = document.getElementById('Work_Experience');
+    var topPos = myElement.offsetTop;
+    document.getElementById('console').scrollTop = topPos;}
+
+
+function Skills_onclick(){
+    var myElement = document.getElementById('Skills');
+    var topPos = myElement.offsetTop;
+    document.getElementById('console').scrollTop = topPos;}
+
+function Projects_onclick(){
+    var myElement = document.getElementById('Projects');
+    var topPos = myElement.offsetTop;
+    document.getElementById('console').scrollTop = topPos;}
+
+
+function myKeyPress(e){
+  var keynum;
+
+  if(window.event) { // IE
+    keynum = e.keyCode;
+  } else if(e.which){ // Netscape/Firefox/Opera
+    keynum = e.which;
+  }
+    if ("p" == String.fromCharCode(keynum)){
+        Pascal_Jardin_onclick();
+    } else if ("e" == String.fromCharCode(keynum)){
+        Education_onclick();
+    } else if ("a" == String.fromCharCode(keynum)){
+        About_Me_onclick();
+    } else if ("l" == String.fromCharCode(keynum)){
+        Links_onclick();
+    } else if ("w" == String.fromCharCode(keynum)){
+        Work_Experience_onclick();
+    } else if ("s" == String.fromCharCode(keynum)){
+        Skills_onclick();
+    } else if ("P" == String.fromCharCode(keynum)){
+        Projects_onclick();
+    }
 }
- 

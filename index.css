@@ -8,8 +8,22 @@ body {
      overflow-y: hidden;
 
      overflow-x: hidden;
+     
+     cursor:url("green_cursor.png"), auto;
 
+     
+     
 }
+
+a {
+    cursor:url("green_cursor.png"), auto;
+    
+     color: rgb(51, 255, 0);
+
+    text-decoration:none;
+}
+
+
 
 ::-webkit-scrollbar {
     display:none;
@@ -47,27 +61,59 @@ body {
 
 }
 
-#art{
+.art{
  font-size: 2vw;
  display: inline-block;
  font-family: "Lucida Console", Monaco, monospace;
  letter-spacing: -0.2em;
  line-height: 0.8em;
  color: rgb(51, 255, 0);
- text-shadow: 0px 0px 3vw rgba(51, 255, 0, 0.5);
-
+ -webkit-animation: glow 2s ease-in-out infinite alternate;
+ -moz-animation: glow 2s ease-in-out infinite alternate;
+ animation: glow 2s ease-in-out infinite alternate;
 }
 
-#text{
+.text{
  font-size: 3vw;
  display: inline-block;
  font-family: "Lucida Console", Monaco, monospace;
  color: rgb(51, 255, 0);
- text-shadow: 0px 0px 3vw rgba(51, 255, 0, 0.5);
-
+ -webkit-animation: glow 2s ease-in-out infinite alternate;
+ -moz-animation: glow 2s ease-in-out infinite alternate;
+ animation: glow 2s ease-in-out infinite alternate;
 }
-a {
-    color: rgb(51, 255, 0);
 
-   text-decoration:none;
+#BotoomNav{
+background-color: black;
+
+ position: absolute;
+ font-size: 2vw;
+ display: inline-block;
+ font-family: "Lucida Console", Monaco, monospace;
+ letter-spacing: -0.2em;
+ line-height: 0.8em;
+ color: rgb(51, 255, 0);
+ bottom: -1.5vw;
+ right: 0;
+ width: 100%;
+ height: 7vw;
+ z-index: 7;
+ 
+ -webkit-animation: glow 2s ease-in-out infinite alternate;
+ -moz-animation: glow 2s ease-in-out infinite alternate;
+ animation: glow 2s ease-in-out infinite alternate;
+}
+
+
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0px 0px 3vw rgba(51, 255, 0, 1);
+
+  }
+  
+  to {
+    text-shadow: 0px 0px 3vw rgba(51, 255, 0, 0.5);
+
+  }
 }
