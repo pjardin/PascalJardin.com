@@ -72,8 +72,6 @@ function UpdateLocation(e){
     var f = document.getElementById("Full_Stack").getBoundingClientRect()
     var s = document.getElementById("Software").getBoundingClientRect()
     var b = document.getElementById("Blender").getBoundingClientRect()
-
-    console.log(curent_loc)
     
     if ( b.top < 30 && b.bottom > 30 &&curent_loc != "b" ){
         curent_loc = "b"
@@ -106,10 +104,10 @@ $( document ).ready(function() {
     
     //https://www.sitepoint.com/get-url-parameters-with-javascript/
     const queryString = window.location.search;
-    console.log(queryString);
+
     const urlParams = new URLSearchParams(queryString);
     const loc = urlParams.get('location')
-    console.log(loc);
+
     goTo(loc)
     
 });
