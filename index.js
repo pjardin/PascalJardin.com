@@ -44,6 +44,15 @@ function Coding_Projects_onclick(){
 
 }
 
+function resources_onclick(){
+    curent_loc = "r"
+    var myElement = document.getElementById('Resources');
+    var topPos = myElement.offsetTop;
+    document.getElementById('console').scrollTop = topPos;
+    window.history.pushState(null, null, '?location=r');
+
+}
+
 function myKeyPress(e){
   var keynum;
 
@@ -75,6 +84,8 @@ function goTo(c){
         Blender_onclick();
     }else if ("c" == c){
         Coding_Projects_onclick();
+    }else if ("r" == c){
+        resources_onclick();
     }
 }
 
@@ -84,6 +95,7 @@ function UpdateLocation(e){
     var s = document.getElementById("Software").getBoundingClientRect()
     var b = document.getElementById("Blender").getBoundingClientRect()
     var c = document.getElementById("Coding_Projects").getBoundingClientRect()
+    var r = document.getElementById("Resources").getBoundingClientRect()
 
     if ( b.top < 30 && b.bottom > 30 &&curent_loc != "b" ){
         curent_loc = "b"
@@ -101,6 +113,9 @@ function UpdateLocation(e){
     }else if (c.top < 50 && c.bottom > 30 && curent_loc != "c" ){
         curent_loc = "c"
         window.history.pushState(null, null, '?location=c');
+    }else if (r.top < 50 && r.bottom > 30 && curent_loc != "r" ){
+        curent_loc = "r"
+        window.history.pushState(null, null, '?location=r');
     }
 
 }
